@@ -6,14 +6,16 @@
 				<condition operation="equal" column="member.member_srl" default="order.member_srl" />
 			</conditions>
 		</table>
-		<table name="insertCancleLog" alias="insertCancleLog" type="left join">
+		<table name="inicis_cancle_log" alias="inicis_cancle_log" type="left join">
 			<conditions>
-				<condition operation="equal" column="insertCancleLog.order_srl" default="order.order_srl" />
+				<condition operation="equal" column="inicis_cancle_log.order_srl" default="order.order_srl" />
+				<condition operation="equal" column="inicis_cancle_log.cancle_type" default="A" pipe="and" />
 			</conditions>
 		</table>
 	</tables>
 	<columns>
 		<column name="order.*" />
+		<column name="inicis_cancle_log.cancle_amount" alias="cancle_amount" />
 		<column name="member.member_srl" alias="member_srl" />
 		<column name="member.nick_name" alias="nick_name" />
 		<column name="member.user_name" alias="user_name" />
