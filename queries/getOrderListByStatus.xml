@@ -6,6 +6,11 @@
 				<condition operation="equal" column="member.member_srl" default="order.member_srl" />
 			</conditions>
 		</table>
+		<table name="insertCancleLog" alias="insertCancleLog" type="left join">
+			<conditions>
+				<condition operation="equal" column="insertCancleLog.order_srl" default="order.order_srl" />
+			</conditions>
+		</table>
 	</tables>
 	<columns>
 		<column name="order.*" />
