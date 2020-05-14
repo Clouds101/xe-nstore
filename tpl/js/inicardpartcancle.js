@@ -13,8 +13,10 @@ jQuery( document ).ready(function() {
 		}
 		if(confirm("정말 취소하시겠습니까?")){
 			var t_srl = jQuery("#ini_order_srl").val();
+			var c_desc = jQuery("#ini_cancle_desc").val();
 			var params = {
 				order_srl:t_srl,
+				cancle_desc:c_desc,
 				cancle_part_price : cancle_price
 			};
 			exec_json('inipaystandard.dispInipaystandardAdminCardPartCancle', params, completeIniCardPartCancle);
