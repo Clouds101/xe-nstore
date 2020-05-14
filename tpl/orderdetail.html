@@ -84,7 +84,7 @@
 								
 								<input type="hidden" name="ini_cancle_amount_limit" id="ini_cancle_amount_limit" value="{$cancle_amount_limit}">
 
-								<input type="text" id="ini_cancle_price" name="ini_card_part_cancle" value="0" style="width:90px;display: inline;" <!--@if($cancle_amount_limit == 0)-->disabled<!--@end-->>원 <input type="text" id="ini_cancle_desc" name="ini_cancle_desc" value="" style="width:90px;display: inline;" placeholder="취소 사유" <!--@if($cancle_amount_limit == 0)-->disabled<!--@end-->> <button type="button" class="x_btn x_btn-warning ini-cardpart-cancle" <!--@if($cancle_amount_limit == 0)-->disabled<!--@end-->>카드결제 부분취소</button>
+								<input type="text" id="ini_cancle_price" name="ini_card_part_cancle" value="0" style="width:90px;display: inline;" <!--@if($cancle_amount_limit == 0)-->disabled<!--@end-->>원 <input type="text" id="ini_cancle_desc" name="ini_cancle_desc" value="" style="width:90px;display: inline;" placeholder="취소 사유" maxlength="40" <!--@if($cancle_amount_limit == 0)-->disabled<!--@end-->> <button type="button" class="x_btn x_btn-warning ini-cardpart-cancle" <!--@if($cancle_amount_limit == 0)-->disabled<!--@end-->>카드결제 부분취소</button>
 							</div>
 							<!--@end-->	
 						</td>
