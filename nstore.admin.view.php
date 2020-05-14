@@ -247,6 +247,19 @@ class nstoreAdminView extends nstore
 		$order_info = $oNstoreModel->getOrderInfo($order_srl);
 
 		$payment_info = $oEpayModel->getTransactionByOrderSrl($order_srl);
+
+		$cancle_amount_limit = $payment_info->payment_amount;
+		if($order_info->payment_method == "CC")
+		{
+			$ca_output = executeQueryArray("inipaystandard.getCancleListByOrderSrl",$payment_info);
+			foreach ($ca_output->data as $key => $cancleInfo)
+			{
+				$cancle_amount_limit = $cancle_amount_limit - $cancleInfo->cancle_amount;
+			}
+			Context::set('cancle_list', $ca_output);
+			Context::set('cancle_amount_limit', $cancle_amount_limit);
+		}
+
 		Context::set('payment_info', $payment_info);
 		Context::set('order_info', $order_info);
 		Context::set('order_status', $this->getOrderStatus());
