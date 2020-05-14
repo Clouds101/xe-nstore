@@ -78,7 +78,7 @@
 								결제 금액 : {number_format($payment_info->payment_amount)}원<br>
 								취소 가능 금액 : {number_format($cancle_amount_limit)}원<br>
 								<!--@foreach ($cancle_list->data as $key => $cancleInfo)-->
-								<p><span style="color:red">-{number_format($cancleInfo->cancle_amount)}원</span><span style="font-size:11px"> ({zdate($cancleInfo->regdate,'Y-m-d H:i:s')})</span></p>
+								<p><span style="color:red">-{number_format($cancleInfo->cancle_amount)}원</span><span style="font-size:11px"> {$cancleInfo->cancle_desc} ({zdate($cancleInfo->regdate,'Y-m-d H:i:s')})</span></p>
 								<!--@end-->
 								<input type="hidden" name="ini_order_srl" id="ini_order_srl" value="{$order_srl}">
 								
