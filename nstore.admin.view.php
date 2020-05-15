@@ -207,6 +207,8 @@ class nstoreAdminView extends nstore
 			$order_list = array();
 		}
 
+		$order_list = $oNstoreModel->mergeIniCardCancleList($order_list);
+
 		$member_config = $oMemberModel->getMemberConfig();
 		$memberIdentifiers = array('user_id' => 'user_id', 'user_name' => 'user_name', 'nick_name' => 'nick_name');
 		$usedIdentifiers = array();
